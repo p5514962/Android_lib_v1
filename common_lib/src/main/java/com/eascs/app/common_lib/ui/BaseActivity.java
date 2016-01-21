@@ -5,6 +5,8 @@ import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.eascs.app.common_lib.model.EventModel;
+
 import de.greenrobot.event.EventBus;
 
 /**
@@ -67,9 +69,12 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onRestoreInstanceState(savedInstanceState);
     }
 
-//    public onEvent(){
-//
-//    }
+    public void onEvent(EventModel eventModel){
 
+    }
+
+    public void onEventMainThread(EventModel eventModel){
+
+    }
 
 }
