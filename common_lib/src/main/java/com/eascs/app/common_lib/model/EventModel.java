@@ -9,4 +9,7 @@ package com.eascs.app.common_lib.model;
  * @date
  */
 public class EventModel {
+
+
+
 }
