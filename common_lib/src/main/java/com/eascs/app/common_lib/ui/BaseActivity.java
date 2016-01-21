@@ -8,7 +8,12 @@ import android.os.Bundle;
 import de.greenrobot.event.EventBus;
 
 /**
- *
+ * @author KevinHo
+ * @version V1.0
+ * @ClassName: BaseActivity
+ * @Description: 公用父类activity
+ * @email 20497342@qq.com
+ * @date 2016/1/21
  */
 public abstract class BaseActivity extends AppCompatActivity {
 
