@@ -1,4 +1,4 @@
-package com.eascs.app.common_lib;
+package com.eascs.app.common_lib.ui;
 
 import android.content.Intent;
 import android.os.PersistableBundle;
