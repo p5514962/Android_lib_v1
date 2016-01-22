@@ -1,7 +1,6 @@
-package com.eascs.app.common_lib.ui;
+package com.eascs.app.common_lib.base;
 
 import android.content.Intent;
-import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -20,27 +19,32 @@ import de.greenrobot.event.EventBus;
 public abstract class BaseActivity extends AppCompatActivity {
 
     protected abstract void setContentLayout();
+
     protected abstract void initViews();
-    protected abstract void initVariables();
-    protected abstract void initData();
+
+    protected abstract void initDatas();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EventBus.getDefault().register(this);
         setContentLayout();//设置布局资源文件或对应布局view
         initViews();//初始化views
-        setListener();//设置
-        initVariables();//初始化变量
-        initData();//初始化页面数据，如调用API接口
+        addEvents();//设置
+        initVars();//初始化变量
+        initDatas();//初始化页面数据，如调用API接口
     }
 
 
     /**
      *
      */
-    protected void setListener(){
+    protected void addEvents() {
+    }
 
+    /**
+     *
+     */
+    protected void initVars() {
     }
 
     //============生命周期方法============//
@@ -57,32 +61,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        EventBus.getDefault().unregister(this);
-    }
-
-    //============储存恢复数据方法============//
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-    }
-
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-    }
-
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-    }
-
-    public void onEvent(BaseEvent baseEvent){
-
-    }
-
-    public void onEventMainThread(BaseEvent baseEvent){
-
     }
 
 }
