@@ -5,7 +5,7 @@ import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.eascs.app.common_lib.model.EventModel;
+import com.eascs.app.common_lib.model.BaseEvent;
 
 import de.greenrobot.event.EventBus;
 
@@ -30,10 +30,18 @@ public abstract class BaseActivity extends AppCompatActivity {
         EventBus.getDefault().register(this);
         setContentLayout();//设置布局资源文件或对应布局view
         initViews();//初始化views
+        setListener();//设置
         initVariables();//初始化变量
         initData();//初始化页面数据，如调用API接口
     }
 
+
+    /**
+     *
+     */
+    protected void setListener(){
+
+    }
 
     //============生命周期方法============//
     @Override
@@ -60,8 +68,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
 
     @Override
-    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
-        super.onSaveInstanceState(outState, outPersistentState);
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
     }
 
     @Override
@@ -69,11 +77,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onRestoreInstanceState(savedInstanceState);
     }
 
-    public void onEvent(EventModel eventModel){
+    public void onEvent(BaseEvent baseEvent){
 
     }
 
-    public void onEventMainThread(EventModel eventModel){
+    public void onEventMainThread(BaseEvent baseEvent){
 
     }
 
