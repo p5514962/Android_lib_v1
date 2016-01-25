@@ -84,11 +84,9 @@ public class ConvertUntil {
      * @return
      */
     public String substring(String value, int start, int end) {
-
         if(start >= end){
             return "";
         }
-
         if (!(start > value.length())) {
             return "";
         }
@@ -97,6 +95,4 @@ public class ConvertUntil {
         }
         return value.substring(start, end);
     }
-
-
 }
